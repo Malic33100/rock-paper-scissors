@@ -1,40 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-    
-<header>
-    <meta charset="UTF-8">
-    <title>Rock , paper , scissors</title>
-</header>
+
+<div class="header">
+    <header>
+        <meta charset="UTF-8">
+        <title>Let's play Rock , paper , scissors!</title>
+    </header>
+</div>
+
 <body>
     <h1>Rock,Paper,scissors</h1>
 
+    <h2>Choose Rock , paper, or scissors below :</h2>
 
-
+    <div id="Input" name="Input">
+        <form>
+            <label for="playerChoice"></label>
+            <button type="submit" id="submit" placeholder="SUBMIT">SUBMIT</button>
+            <input type="text" name="playerChoice" id="playerChoice" placeholder="Type choice here" required>
+            /* convert this to js variable */
+        </form>
+    </div>
 </body>
+
     <script>
+
 var Pick = ["rock","paper","scissors"];
 var randomPick = Pick[Math.floor(Math.random()*Pick.length)];
+
+/* let playerPick = document.getElementById("playerChoice"); */
+
+
 
 function computerPlay() {
 return randomPick;
 }
 
-function playerPlay() {
-var playerPick = 
-return playerPick;
+const playerSelection = "rock";
+const computerChoice = computerPlay();
+
+function oneRound(playerChoice,computerChoice) {
+if(computerChoice = playerChoice){
+    console.log("Its a draw!");
+}
+else if(computerChoice === "rock" && playerChoice == "paper" ){
+console.log("Player wins!");
+}
+else if(computerChoice ==="paper" && playerChoice == "scissors"){
+    console.log("PLayer wins!");
+}
+else if(computerChoice ==="scissors" && playerChoice =="rock"){
+    console.log("Player wins!")
+}
+else {
+    console.log("Computer wins!")
 }
 
-function oneRound() {
-    for(x > y){
-
-    }
-    (x < y){
-
-    }
-    else {
-
-    }
 }
+
+
+
+
 
     </script>
     </html>
