@@ -16,9 +16,8 @@
     <div id="Input" name="Input">
         <form>
             <label for="playerChoice"></label>
-            <button type="submit" id="submit" placeholder="SUBMIT">SUBMIT</button>
+            <button type="submit" id="submit" placeholder="SUBMIT" onsubmit="playerSelection">SUBMIT</button>
             <input type="text" name="playerChoice" id="playerChoice" placeholder="Type choice here" required>
-            /* convert this to js variable */
         </form>
     </div>
 </body>
@@ -26,8 +25,10 @@
     <script>
 
 var Pick = ["rock","paper","scissors"];
-var randomPick = Pick[Math.floor(Math.random()*Pick.length)];
-
+var randomPick = Pick[Math.floor(Math.random()*(Pick.length + 1) )];
+var rockRegex = /rock/gi;
+var paperRegex = /paper/gi;
+var scisRegex = /scissors/gi;
 /* let playerPick = document.getElementById("playerChoice"); */
 
 
@@ -36,28 +37,38 @@ function computerPlay() {
 return randomPick;
 }
 
-const playerSelection = "rock";
+let playerSelection = "rock";
 const computerChoice = computerPlay();
+var rounds = 0;
 
-function oneRound(playerChoice,computerChoice) {
-if(computerChoice = playerChoice){
+console.log(playerSelection);
+
+function oneRound(playerSelection,computerChoice) {
+    if(rounds > 1){
+if(computerChoice == "rock" && playerSelection.match(rockRegex)){
     console.log("Its a draw!");
 }
-else if(computerChoice === "rock" && playerChoice == "paper" ){
+else if(computerChoice == "rock" && playerSelection.match(paperRegex) ){
 console.log("Player wins!");
 }
-else if(computerChoice ==="paper" && playerChoice == "scissors"){
+else if(computerChoice =="paper" && playerSelection.match(scisRegex)){
     console.log("PLayer wins!");
 }
-else if(computerChoice ==="scissors" && playerChoice =="rock"){
+else if(computerChoice =="scissors" && playerSelection.match(rockRegex)){
     console.log("Player wins!")
 }
 else {
     console.log("Computer wins!")
+} 
+return(oneRound(playerSelection,computerChoice)); 
 }
 
-}
-
+};
+ rounds++;
+console.log(playerSelection);
+console.log(computerChoice);
+console.log(rounds);
+ console.log(oneRound(playerSelection,computerChoice));
 
 
 
