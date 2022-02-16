@@ -37,8 +37,8 @@ function computerPlay() {
 return randomPick;
 }
 
-let playerSelection = "paper";
-var computerChoice = computerPlay();
+let playerSelection = "paper";  
+var computerChoice = computerPlay(); 
 var rounds = 0;
 console.log(playerSelection);
 console.log(computerChoice);
@@ -47,7 +47,8 @@ console.log(computerChoice);
 
 function oneRound(playerSelection,computerChoice) {
 if(computerChoice === "rock"){
-    if(playerSelection.toLowerCase().toLowerCase() === "paper"){
+    console.log("PC picks rock");
+    if(playerSelection.toLowerCase() === "paper"){
         console.log("Player wins!");
     }
     else if(playerSelection.toLowerCase() === "scissors"){
@@ -88,8 +89,10 @@ else {
 if(rounds < 1){
     oneRound(playerySelection,computerChoice);
 };
-*/
+
  rounds++;
+ */
+oneRound(computerChoice,playerSelection);
 
 console.log(playerSelection);
 console.log(computerChoice);
