@@ -25,7 +25,7 @@
     <script>
 
 var Pick = ["rock","paper","scissors"];
-var randomPick = Pick[Math.floor(Math.random()*(Pick.length + 1) )];
+var randomPick = Pick[Math.floor(Math.random()*(Pick.length ) )];
 var rockRegex = /rock/gi;
 var paperRegex = /paper/gi;
 var scisRegex = /scissors/gi;
@@ -37,38 +37,63 @@ function computerPlay() {
 return randomPick;
 }
 
-let playerSelection = "rock";
-const computerChoice = computerPlay();
+let playerSelection = "paper";
+var computerChoice = computerPlay();
 var rounds = 0;
-
 console.log(playerSelection);
+console.log(computerChoice);
+
+
 
 function oneRound(playerSelection,computerChoice) {
-    if(rounds > 1){
-if(computerChoice == "rock" && playerSelection.match(rockRegex)){
-    console.log("Its a draw!");
-}
-else if(computerChoice == "rock" && playerSelection.match(paperRegex) ){
-console.log("Player wins!");
-}
-else if(computerChoice =="paper" && playerSelection.match(scisRegex)){
-    console.log("PLayer wins!");
-}
-else if(computerChoice =="scissors" && playerSelection.match(rockRegex)){
-    console.log("Player wins!")
-}
-else {
-    console.log("Computer wins!")
+if(computerChoice === "rock"){
+    if(playerSelection.toLowerCase().toLowerCase() === "paper"){
+        console.log("Player wins!");
+    }
+    else if(playerSelection.toLowerCase() === "scissors"){
+        console.log("Computer wins!");
+    }
+    else{
+        console.log("It's a draw!");
+    }
 } 
-return(oneRound(playerSelection,computerChoice)); 
-}
-
+else if(computerChoice === "paper"){
+    if(playerSelection.toLowerCase() === "rock"){
+    console.log("Computer wins!");
+    }
+    else if(playerSelection.toLowerCase() === "scissors"){
+        console.log("Player wins!");
+    }
+    else {
+        console.log("It's a draw!");
+    }
+    }    
+else if(computerChoice ==="scissors"){
+    if(playerSelection.toLowerCase() === "rock"){
+        console.log("Player wins!");
+    }
+    else if(playerSelection.toLowerCase() === "paper"){
+        console.log("Computer wins!");
+    }
+    else{
+        console.log("Its a draw!");
+    }
+} 
+else {
+    console.log("It still aint working")
+}  
 };
+
+/*
+if(rounds < 1){
+    oneRound(playerySelection,computerChoice);
+};
+*/
  rounds++;
+
 console.log(playerSelection);
 console.log(computerChoice);
 console.log(rounds);
- console.log(oneRound(playerSelection,computerChoice));
 
 
 
