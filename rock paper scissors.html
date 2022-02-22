@@ -40,66 +40,83 @@ return randomPick;
 let playerSelection = "paper";  
 var computerChoice = computerPlay(); 
 var rounds = 0;
-console.log(playerSelection);
-console.log(computerChoice);
+var i = 0;
+var PlayerWins = 0;
+var computerWins = 0;
 
 
 
 function oneRound(playerSelection,computerChoice) {
 if(computerChoice === "rock"){
-    console.log("PC picks rock");
     if(playerSelection.toLowerCase() === "paper"){
-        console.log("Player wins!");
+        PlayerWins++;
+        return "Player wins!";
     }
     else if(playerSelection.toLowerCase() === "scissors"){
-        console.log("Computer wins!");
+        computerWins++;
+        return "Computer wins!";
     }
     else{
-        console.log("It's a draw!");
+        return "It's a draw!";
     }
 } 
 else if(computerChoice === "paper"){
     if(playerSelection.toLowerCase() === "rock"){
-    console.log("Computer wins!");
+        computerWins++;
+    return "Computer wins!";
     }
     else if(playerSelection.toLowerCase() === "scissors"){
-        console.log("Player wins!");
+        PlayerWins++;
+        return "Player wins!";
     }
     else {
-        console.log("It's a draw!");
+        return "It's a draw!";
     }
     }    
 else if(computerChoice ==="scissors"){
     if(playerSelection.toLowerCase() === "rock"){
-        console.log("Player wins!");
+        PlayerWins++;
+        return "Player wins!";
     }
     else if(playerSelection.toLowerCase() === "paper"){
-        console.log("Computer wins!");
+        computerWins++;
+        return "Computer wins!";
     }
     else{
-        console.log("Its a draw!");
+        return "Its a draw!";
     }
 } 
 else {
-    console.log("It still aint working")
+    return "This isnt supposed to happen";
 }  
 };
 
-/*
-if(rounds < 1){
-    oneRound(playerySelection,computerChoice);
-};
+function game(){
+    for (let i = 0; i < 5; i++){
+            console.log(oneRound(computerChoice,playerSelection));
+        console.log(Winner(game));
+        console.log(PlayerWins);
+        console.log(computerWins);
+    }
+}
 
- rounds++;
- */
+function Winner (PlayerWins,computerWins){
+    if(PlayerWins = 3 ){
+        return "Player has won the game! Congratulations!";
+    }else {
+        return "Computer has won the game! Better luck next time!";
+    }
+}
+;
+
+
 oneRound(computerChoice,playerSelection);
-
-console.log(playerSelection);
-console.log(computerChoice);
+console.log(game());
 console.log(rounds);
+console.log(oneRound(computerChoice,playerSelection));
 
 
 
 
     </script>
-    </html>
+    </htmlgh
