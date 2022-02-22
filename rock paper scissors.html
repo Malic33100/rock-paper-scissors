@@ -37,16 +37,16 @@ function computerPlay() {
 return randomPick;
 }
 
-let playerSelection = "paper";  
+let playerSelection = prompt("Rock,paper,or scissors ?");  
 var computerChoice = computerPlay(); 
 var rounds = 0;
 var i = 0;
-var PlayerWins = 0;
+ PlayerWins = 0;
 var computerWins = 0;
 
 
 
-function oneRound(playerSelection,computerChoice) {
+function oneRound(computerChoice,playerSelection) {
 if(computerChoice === "rock"){
     if(playerSelection.toLowerCase() === "paper"){
         PlayerWins++;
@@ -91,28 +91,32 @@ else {
 }  
 };
 
-function game(){
+function game(i){
     for (let i = 0; i < 5; i++){
             console.log(oneRound(computerChoice,playerSelection));
-        console.log(Winner(game));
+        console.log(Winner(PlayerWins,computerWins));
         console.log(PlayerWins);
         console.log(computerWins);
     }
 }
 
 function Winner (PlayerWins,computerWins){
-    if(PlayerWins = 3 ){
+    if(PlayerWins > 2 ){
         return "Player has won the game! Congratulations!";
-    }else {
-        return "Computer has won the game! Better luck next time!";
+    }else if(computerWins > 2){
+        return "Computer has won the game! Better luck next time!"
+    }
+    else {
+        return "Game isnt over yet! Keep playing!";
     }
 }
 ;
 
 
 oneRound(computerChoice,playerSelection);
-console.log(game());
-console.log(rounds);
+console.log(playerSelection);
+console.log(computerChoice);
+console.log(game(5));
 console.log(oneRound(computerChoice,playerSelection));
 
 
