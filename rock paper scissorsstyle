@@ -1,0 +1,24 @@
+content {
+    display: flex;
+    align-items: center;
+}
+
+body {
+font-style:italic;
+display: flex;
+align-content: center;
+}
+
+header {
+    background-color: #fff;
+}
+
+#input {
+    font-size:large;
+    background-color: black;
+}
+
+h1 {
+    font-size:x-large;
+    background-color:rgb(119, 240, 199);
+}
