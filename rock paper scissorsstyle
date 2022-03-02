@@ -1,6 +1,12 @@
 content {
     display: flex;
+    outline:auto;
+    outline-color:blueviolet;
     align-items: center;
+    background-color: red;
+    height:auto;
+    min-width:1000px; 
+    flex-direction:left;
 }
 
 body {
@@ -9,16 +15,33 @@ display: flex;
 align-content: center;
 }
 
+h2 {
+    display:flex;
+    height: auto;
+    width:100%;
+    background-color: burlywood;
+}
+
 header {
     background-color: #fff;
+    display:flex;
 }
 
 #input {
     font-size:large;
     background-color: black;
+    display:flex;
+    margin: top 50px right 50px;
 }
 
 h1 {
     font-size:x-large;
+    display:flex;
+    text-align:center;
     background-color:rgb(119, 240, 199);
+}
+
+spacer {
+    height:auto;
+    width:auto;
 }
