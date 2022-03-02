@@ -21,11 +21,13 @@
         <h1 id="spacer" name="spacer-dots"> : : : : : </h1>
     </div>
     <div id="Input" name="Input">
-        <form>
-            <label for="playerChoice"></label>
-            <button type="submit" id="rock-button" placeholder="Rock" onsubmit="playerSelection" onclick="Answer()">Rock</button>
-            <button type="submit" id="paper-button" placeholder="Paper" onsubmit="playerSelection" onclick="Answer()">Paper</button>
-            <button type="submit" id="scissors-button" placeholder="Scissors" onsubmit="playerSelection" onclick="Answer()">Scissors</button>
+        // buttons send input to js function //
+        <form onsubmit="Answer()">
+            <label for="playerChoice">
+            <button type="submit" id="rock-button button btn-default" placeholder="Rock" onsubmit="playerSelection" value="rock" onclick="Answer()">Rock</button>
+            <button type="submit" id="paper-button button btn-default" placeholder="Paper" onsubmit="playerSelection" value="paper" onclick="Answer()">Paper</button>
+            <button type="submit" id="scissors-button button btn-default" placeholder="Scissors" onsubmit="playerSelection" value="scissors" onclick="Answer()">Scissors</button>
+            </label>
         </form>
     </div>
 
@@ -38,10 +40,11 @@ var randomPick = Pick[Math.floor(Math.random()*(Pick.length ) )];
 var rockRegex = /rock/gi;
 var paperRegex = /paper/gi;
 var scisRegex = /scissors/gi;
+var playerSelection = " ";
 /* let playerPick = document.getElementById("playerChoice"); */
 
 // function receives button id and assigns value to player choice //
-function Answer (){
+function Answer (name){
 var playerSelection = button.id;
 alert(playerSelection);
 }

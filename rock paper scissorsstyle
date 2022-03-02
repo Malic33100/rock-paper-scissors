@@ -45,3 +45,26 @@ spacer {
     height:auto;
     width:auto;
 }
+
+#button {
+    height:fit-content;
+    width:auto;
+}
+
+#rock-button {
+    text-align: center;
+    display: flex;
+    color:gold;
+}
+
+#paper-button {
+    text-align: center;
+    display: flex;
+    color:crimson;
+}
+
+#scissors-button {
+    text-align: center;
+    display: flex;
+    color:lawngreen;
+}
