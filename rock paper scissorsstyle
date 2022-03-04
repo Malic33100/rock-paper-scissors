@@ -1,3 +1,8 @@
+/* playing with focus style */
+:focus {
+    outline: 5px;
+}
+
 content {
     display: flex;
     outline:auto;

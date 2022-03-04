@@ -9,7 +9,18 @@
     </header>
 </div>
 
-<body>
+<!-- current issues
+// game plays but without user input, 
+// fucntion plays before user input is received
+
+-->
+<div id="spacer">
+    /                       /
+    /                       /
+    /                       /
+</div>
+
+<body id="body">
     <div id="content" name="content" >
 
     
@@ -17,17 +28,14 @@
 
     <h2>Choose Rock , paper, or scissors below :</h2>
 
-    <div id="spacer" name="spacer">
-        <h1 id="spacer" name="spacer-dots"> : : : : : </h1>
-    </div>
+    
     <div id="Input" name="Input">
         // buttons send input to js function //
         <form onsubmit="Answer()">
-            <label for="playerChoice">
-            <button type="submit" id="rock-button button btn-default" placeholder="Rock" onsubmit="playerSelection" value="rock" onclick="Answer()">Rock</button>
-            <button type="submit" id="paper-button button btn-default" placeholder="Paper" onsubmit="playerSelection" value="paper" onclick="Answer()">Paper</button>
-            <button type="submit" id="scissors-button button btn-default" placeholder="Scissors" onsubmit="playerSelection" value="scissors" onclick="Answer()">Scissors</button>
-            </label>
+            <label for="playerChoice"></label>
+            <button type="submit" id="rock button btn-default" name="rock" value="rock" >Rock</button>
+            <button type="submit" id="paper button btn-default" name="paper" value="paper" >Paper</button>
+            <button type="submit" id="scissors button btn-default" name="scissors" value="scissors" >Scissors</button>
         </form>
     </div>
 
@@ -36,17 +44,17 @@
     <script>
 
 var Pick = ["rock","paper","scissors"];
-var randomPick = Pick[Math.floor(Math.random()*(Pick.length ) )];
+var randomPick = Pick[Math.floor(Math.random()*(Pick.length))];
 var rockRegex = /rock/gi;
 var paperRegex = /paper/gi;
 var scisRegex = /scissors/gi;
-var playerSelection = " ";
+var playerSelection = document.getElementById("btn-default");
 /* let playerPick = document.getElementById("playerChoice"); */
 
 // function receives button id and assigns value to player choice //
-function Answer (name){
-var playerSelection = button.id;
-alert(playerSelection);
+function Answer (button){
+var playerSelection = button;
+alert(button);
 }
 
 // function that selects random choice of rock,paper,scissors //
@@ -132,12 +140,13 @@ function Winner (PlayerWins,computerWins){
 ;
 
 // checking results and playing the game 6 times //
+/*
 oneRound(computerChoice,playerSelection);
 console.log(playerSelection);
 console.log(computerChoice);
 console.log(game(5));
 console.log(oneRound(computerChoice,playerSelection));
-
+*/
 
 
 
