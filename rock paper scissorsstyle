@@ -1,6 +1,6 @@
 /* playing with focus style */
 :focus {
-    outline: 5px;
+    outline: 5px dashed blue ;
 }
 
 content {

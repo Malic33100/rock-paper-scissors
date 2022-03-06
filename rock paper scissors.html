@@ -29,13 +29,19 @@
     <h2>Choose Rock , paper, or scissors below :</h2>
 
     
-    <div id="Input" name="Input">
-        // buttons send input to js function //
-        <form onsubmit="Answer()">
+    <div class="buttons" id="Input" name="Input">
+        <!-- buttons send input to js function  -->  
+        <form onsubmit="playerPick()">
             <label for="playerChoice"></label>
-            <button type="submit" id="rock button btn-default" name="rock" value="rock" >Rock</button>
-            <button type="submit" id="paper button btn-default" name="paper" value="paper" >Paper</button>
-            <button type="submit" id="scissors button btn-default" name="scissors" value="scissors" >Scissors</button>
+            <div id="rock-button">
+                <button type="submit" class="button btn-default" id="rock" value=0>Rock</button>
+            </div>
+            <div id="paper-button">
+                <button type="submit" class="button btn-default" id="paper" value=1>Paper</button>
+            </div>
+            <div id="scissors-button">
+                <button type="submit" class="button btn-default" id="scissors" value=2>Scissors</button>
+            </div>
         </form>
     </div>
 
@@ -48,14 +54,48 @@ var randomPick = Pick[Math.floor(Math.random()*(Pick.length))];
 var rockRegex = /rock/gi;
 var paperRegex = /paper/gi;
 var scisRegex = /scissors/gi;
-var playerSelection = document.getElementById("btn-default");
+let buttons = document.querySelectorAll(".button");
+let playerSelection = "test";
+//let button = ;
 /* let playerPick = document.getElementById("playerChoice"); */
 
-// function receives button id and assigns value to player choice //
-function Answer (button){
-var playerSelection = button;
-alert(button);
+/*
+if (buttons > 2){
+    document.addEventListener("click",buttons);
 }
+console.log(buttons);
+*/
+
+/*
+function displayButton(){
+//  let button = document.querySelector(button.name); 
+    alert(button);
+}
+*/
+
+// iterator to loop through buttons 
+/*
+for(i=0;i < buttons.length; i++){
+    console.log(buttons[i].id);
+} */
+
+function playerPick(){
+    let buttons = document.querySelectorAll(".button");
+    document.addEventListener("click",buttons);
+    let playerSelection = buttons[i].id;
+    alert(playerSelection);
+}
+
+/*
+buttons.forEach(button => {
+    addEventListener("click",Answer())
+});
+
+function Answer (button){
+var playerSelection = button.match(button.name);
+alert(playerSelection);
+}
+    */
 
 // function that selects random choice of rock,paper,scissors //
 function computerPlay() {
@@ -67,7 +107,7 @@ return randomPick;
 var computerChoice = computerPlay(); 
 var rounds = 0;
 var i = 0;
- PlayerWins = 0;
+let PlayerWins = 0;
 var computerWins = 0;
 
 // takes both player and computer choice and returns match results one time //
