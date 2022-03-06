@@ -34,13 +34,13 @@
         <form onsubmit="playerPick()">
             <label for="playerChoice"></label>
             <div id="rock-button">
-                <button type="submit" class="button btn-default" id="rock" value=0>Rock</button>
+                <input type="button" class="button btn-default" id="rock" value="Rock">Rock</button>
             </div>
             <div id="paper-button">
-                <button type="submit" class="button btn-default" id="paper" value=1>Paper</button>
+                <input type="button" class="button btn-default" id="paper" value="Paper">Paper</button>
             </div>
             <div id="scissors-button">
-                <button type="submit" class="button btn-default" id="scissors" value=2>Scissors</button>
+                <input type="button" class="button btn-default" id="scissors" value="Scissors">Scissors</button>
             </div>
         </form>
     </div>
@@ -51,20 +51,17 @@
 
 var Pick = ["rock","paper","scissors"];
 var randomPick = Pick[Math.floor(Math.random()*(Pick.length))];
+let buttons = document.querySelectorAll(".button");
+let playerRock = document.querySelector("#rock-button");
+let playerPaper = document.querySelector("#paper-button");
+let playerScissors = document.querySelector("#scissors-button");
 var rockRegex = /rock/gi;
 var paperRegex = /paper/gi;
-var scisRegex = /scissors/gi;
-let buttons = document.querySelectorAll(".button");
-let playerSelection = "test";
+var scissorsRegex = /scissors/gi;
+let playerSelection;
+let value;
 //let button = ;
 /* let playerPick = document.getElementById("playerChoice"); */
-
-/*
-if (buttons > 2){
-    document.addEventListener("click",buttons);
-}
-console.log(buttons);
-*/
 
 /*
 function displayButton(){
@@ -72,30 +69,39 @@ function displayButton(){
     alert(button);
 }
 */
+playerRock.addEventListener("click",(e) => {
+    let playerSelection = buttons[0].id;
+    alert(playerSelection);
+})
 
-// iterator to loop through buttons 
-/*
-for(i=0;i < buttons.length; i++){
-    console.log(buttons[i].id);
-} */
+playerPaper.addEventListener("click",(e) => {
+    let playerSelection = buttons[1].id;
+    alert(playerSelection);
+})
+
+playerScissors.addEventListener("click",(e) => {
+    let playerSelection = buttons[2].id;
+    alert(playerSelection);
+})
 
 function playerPick(){
-    let buttons = document.querySelectorAll(".button");
-    document.addEventListener("click",buttons);
-    let playerSelection = buttons[i].id;
-    alert(playerSelection);
+let buttons = document.querySelectorAll(".button");
+
+    if (playerSelection.match(rockRegex)){
+        console.log(playerSelection);
+    }
+    else if (playerSelection.match(scissorsRegex)){
+        console.log(playerSelection);
+    }
+    else {
+        console.log(playerSelection);
+    }
 }
 
 /*
 buttons.forEach(button => {
     addEventListener("click",Answer())
 });
-
-function Answer (button){
-var playerSelection = button.match(button.name);
-alert(playerSelection);
-}
-    */
 
 // function that selects random choice of rock,paper,scissors //
 function computerPlay() {
