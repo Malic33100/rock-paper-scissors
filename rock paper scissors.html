@@ -69,41 +69,45 @@ function displayButton(){
     alert(button);
 }
 */
+
+// getting players choice via click event
 playerRock.addEventListener("click",(e) => {
     let playerSelection = buttons[0].id;
-    alert(playerSelection);
+   return oneRound(computerChoice,playerSelection);
 })
 
 playerPaper.addEventListener("click",(e) => {
     let playerSelection = buttons[1].id;
-    alert(playerSelection);
+    alert(oneRound(computerChoice,playerSelection))
+    
+    
+    
 })
 
 playerScissors.addEventListener("click",(e) => {
     let playerSelection = buttons[2].id;
-    alert(playerSelection);
-})
 
+   return oneRound(computerChoice,playerSelection);
+});
+
+// retrieving player choice and storing inside of variable
 function playerPick(){
 let buttons = document.querySelectorAll(".button");
-
+let rounds;
+rounds++;
     if (playerSelection.match(rockRegex)){
-        console.log(playerSelection);
+        return playerSelection;
+        console.log(oneRound(computerChoice,playerSelection));
     }
     else if (playerSelection.match(scissorsRegex)){
-        console.log(playerSelection);
+        return playerSelection;
     }
     else {
-        console.log(playerSelection);
+        return playerSelection;
     }
 }
 
-/*
-buttons.forEach(button => {
-    addEventListener("click",Answer())
-});
-
-// function that selects random choice of rock,paper,scissors //
+// function that selects random choice of rock,paper,scissors for computer //
 function computerPlay() {
 return randomPick;
 }
@@ -119,11 +123,11 @@ var computerWins = 0;
 // takes both player and computer choice and returns match results one time //
 function oneRound(computerChoice,playerSelection) {
 if(computerChoice === "rock"){
-    if(playerSelection.toLowerCase() === "paper"){
+    if(playerSelection = "paper"){
         PlayerWins++;
         return "Player wins!";
     }
-    else if(playerSelection.toLowerCase() === "scissors"){
+    else if(playerSelection = "scissors"){
         computerWins++;
         return "Computer wins!";
     }
@@ -132,11 +136,11 @@ if(computerChoice === "rock"){
     }
 } 
 else if(computerChoice === "paper"){
-    if(playerSelection.toLowerCase() === "rock"){
+    if(playerSelection = "rock"){
         computerWins++;
     return "Computer wins!";
     }
-    else if(playerSelection.toLowerCase() === "scissors"){
+    else if(playerSelection = "scissors"){
         PlayerWins++;
         return "Player wins!";
     }
@@ -145,11 +149,11 @@ else if(computerChoice === "paper"){
     }
     }    
 else if(computerChoice ==="scissors"){
-    if(playerSelection.toLowerCase() === "rock"){
+    if(playerSelection = "rock"){
         PlayerWins++;
         return "Player wins!";
     }
-    else if(playerSelection.toLowerCase() === "paper"){
+    else if(playerSelection = "paper"){
         computerWins++;
         return "Computer wins!";
     }
@@ -162,10 +166,11 @@ else {
 }  
 };
 
-// function that plays a game 5 times //
+// function that plays a game 5 times // 
+
 function game(i){
     for (let i = 0; i < 5; i++){
-            console.log(oneRound(computerChoice,playerSelection));
+        console.log(oneRound(computerChoice,playerSelection));
         console.log(Winner(PlayerWins,computerWins));
         console.log(PlayerWins);
         console.log(computerWins);
