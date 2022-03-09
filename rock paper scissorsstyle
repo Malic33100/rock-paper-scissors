@@ -1,6 +1,6 @@
 /* playing with focus style */
 :focus {
-    outline: px dashed blue;
+    outline: 3px dashed blue;
     text-decoration: none;
 }
 
@@ -56,7 +56,7 @@ spacer {
     height:fit-content;
     width:auto;
 }
-/*
+
 #rock-button {
     text-align: center;
     display: flex;
@@ -73,4 +73,4 @@ spacer {
     text-align: center;
     display: flex;
     color:lawngreen;
-} */
+} 

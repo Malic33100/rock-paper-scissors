@@ -78,15 +78,11 @@ playerRock.addEventListener("click",(e) => {
 
 playerPaper.addEventListener("click",(e) => {
     let playerSelection = buttons[1].id;
-    alert(oneRound(computerChoice,playerSelection))
-    
-    
-    
+    return(oneRound(computerChoice,playerSelection));
 })
 
 playerScissors.addEventListener("click",(e) => {
     let playerSelection = buttons[2].id;
-
    return oneRound(computerChoice,playerSelection);
 });
 
